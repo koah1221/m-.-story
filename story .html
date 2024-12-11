@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story Selector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .story-container {
+      display: none;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="welcome-screen">
+      <h1>Welcome</h1>
+      <button onclick="showOptions()">Enter</button>
+    </div>
+    <div id="options" class="story-container">
+      <button onclick="showStory('delhi')">Delhi Story</button>
+      <button onclick="showStory('beach')">Beach Story</button>
+    </div>
+    <div id="story" class="story-container"></div>
+  </div>
+
+  <script>
+    function showOptions() {
+      document.getElementById('welcome-screen').style.display = 'none';
+      document.getElementById('options').style.display = 'block';
+    }
+
+    function showStory(story) {
+      const storyContainer = document.getElementById('story');
+      storyContainer.style.display = 'block';
+      document.getElementById('options').style.display = 'none';
+
+      if (story === 'delhi') {
+        storyContainer.innerHTML = `
+          <h2>The Delhi Story</h2>
+          <p>Hem was a simple guy from a small village in Andhra Pradesh. His days were spent working as a software engineer in Visakhapatnam, and his evenings were reserved for video calls with CC, the love of his life. Hem and CC had met through a mutual friend on Instagram, and their conversations quickly grew into something beautiful. CC lived in Delhi, far from Hem’s world, but their hearts were closer than ever.</p>
+          <p>For months, Hem and CC dreamed of meeting in person. They shared plans, imagined their first hug, and promised it would be magical. One crisp December morning, Hem decided it was time to turn those dreams into reality.</p>
+          <p>Hem booked his train tickets, choosing a window seat to savor the landscapes of India as he traveled north. He didn’t tell CC about his trip; he wanted to surprise her. On the day of his journey, he packed a small bag, carefully placing a box of sweets his mother had made for CC and a handwritten letter expressing everything he felt but had never been able to say.</p>
+          <p>As the train chugged along, Hem watched the fields of Andhra Pradesh fade into the bustling cities of the north. His heart was a whirlwind of excitement and nerves. By the time he reached Delhi, it was evening, and the winter chill was in the air.</p>
+          <p>Hem called CC casually, pretending it was just another day.</p>
+          <p>"How was your day?" he asked, his voice calm despite his racing heart.</p>
+          <p>"Busy as always," CC replied. "What about you?"</p>
+          <p>"I was traveling," Hem said, smiling to himself.</p>
+          <p>"Traveling? Where to?" CC asked, surprised.</p>
+          <p>"Turn around," Hem whispered.</p>
+          <p>CC froze. She was sitting at her favorite café in Connaught Place. Slowly, she turned, and there he was—Hem, standing a few feet away, holding a small bouquet of marigolds.</p>
+          <p>Tears filled CC’s eyes as she ran to him, and they embraced tightly, not caring about the curious onlookers. It felt like time stood still.</p>
+          <p>That evening, they walked through the lively streets of Delhi, talking and laughing as if they’d known each other forever. They visited India Gate, ate chaat from a roadside vendor, and even shared their first selfie under the fairy lights of a street market.</p>
+          <p>For Hem and CC, the distance had always been daunting, but that night they realized that love was worth every mile. Hem returned to Andhra a few days later, but they both knew this was just the beginning of a lifetime of journeys together.</p>
+        `;
+      } else if (story === 'beach') {
+        storyContainer.innerHTML = `
+          <h2>The Beach Story</h2>
+          <p>Yakshini was an adventurous young woman, always eager to explore new places. When her mother suggested she visit her maternal uncle, who lived in Vizag, she agreed without hesitation. Vizag’s beaches, hills, and serene beauty were a perfect escape from her hectic city life in Hyderabad.</p>
+          <p>Her uncle welcomed her warmly and insisted she feel at home. After a day of sightseeing, Yakshini decided to take an evening walk by the beach. She had heard so much about the calm waters and cool breezes of RK Beach.</p>
+          <p>At 9 PM, the beach was almost deserted, save for a few night joggers and vendors packing up their stalls. The waves shimmered under the pale moonlight, and Yakshini felt a strange mixture of peace and unease. As she walked along the shore, she noticed a man sitting alone near the water, staring into the distance. He seemed harmless, so she paid him no mind.</p>
+          <p>After a few minutes, Yakshini realized she was being followed. She glanced over her shoulder and saw no one. Shrugging it off as paranoia, she continued walking. But the feeling grew stronger. She heard faint whispers carried by the wind, but when she turned around, the beach appeared empty.</p>
+          <p>Then she saw him—the man who had been sitting near the water. He was standing just a few feet away now, his face hidden in shadows.</p>
+          <p>"Do you need something?" she asked, trying to keep her voice steady.</p>
+          <p>The man didn’t respond. Instead, he tilted his head unnaturally, as if studying her. Yakshini felt a chill crawl down her spine.</p>
+          <p>She began to walk faster, her heart pounding. The whispers grew louder, but now they weren’t coming from the wind. They were in her head—murmurs of her name, soft and sinister.</p>
+          <p>“Yakshini... come back... Yakshini...”</p>
+          <p>Suddenly, she tripped over something and fell onto the sand. When she looked down, her blood ran cold. It was a severed hand, half-buried in the sand. She scrambled to her feet, only to see the man standing right in front of her now. His face was pale, his eyes hollow and black.</p>
+          <p>Yakshini screamed and ran toward the road, her breaths ragged and tears streaming down her face. She looked back once but saw nothing—the man was gone.</p>
+          <p>When she finally reached the safety of her uncle’s house, she collapsed in the doorway. Her uncle, alarmed, asked her what had happened. Through sobs, she recounted the horrifying experience.</p>
+          <p>Her uncle’s face turned ashen. "You shouldn’t have gone there alone," he said, his voice trembling. "There are stories about that beach… about a fisherman who drowned and now roams the shore, looking for company in his misery."</p>
+          <p>Yakshini never set foot on a beach again. Though she returned to Hyderabad the next day, the whispers followed her, haunting her dreams and creeping into her thoughts.</p>
+          <p>To this day, locals warn visitors to avoid Vizag Beach after dark, especially if they hear their name whispered in the wind.</p>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
